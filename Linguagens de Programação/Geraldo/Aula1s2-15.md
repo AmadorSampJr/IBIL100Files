@@ -426,3 +426,85 @@ Esses fato é preponderante para o aumento da popularidade das linguagens orient
 
 Todos esses passos evolutivos em metodologias de desenvolvimentos de software levaram a novas construções
 de linguagens para suportá-las.
+
+
+aula 22/05/2015
+
+F) Categoria de Linguagens
+	
+	as linguagens de programação são divididas em quatro categorias: Imperativas, funcionais, logicas e orientadas a objetos. as linguagens mais populares que suportam a orientação a objetos crescem a partir das linguagens imperativas
+
+G) Trade-off no projeto de linguagens 
+
+	dois criterios conflitantes são confiabilidade e o custo de execução. por exemplo, a linguagem java exige que todas as referencias aos elementos de um vetor sejam verificadas para garantir que os índices estejam em suas faixas legais. esse passo adiciona muito ao custo de execução de um programa java que contenham um grande número de referencias a elementos de vetores. E, por exemplo, não requer a verificação da faixa de índices, dessa forma, os programas em C executam mais rapido do que programas semanticamente equivalentes em java, apesar destes serem mais confiáveis. os projetistas de java trocaram eficiencia de execução  por confiabilidade.
+
+H) Implementação
+
+	um sistema de implementação de linguagem não pode ser o unico aplicativo de software em um computador. Tambem é necessaria uma grande coleção de programas, chamada de sistema operacional, a qual fornece primitivas de mais alto nivel do que aquelas fornecidas pela linguagem de máquina.
+
+H1) Compilação
+
+As linguagens de programação podem ser implementadas por um de tres métodos gerais. Em um extremo, os programas Podem ser traduzidos para linguagens de máquina. A qual pode ser executada diretamente no computador. Esse método é chamado de implementação baseada em compilação com a vantagem de ter uma execução de programas mas muito mais rápida, uma vez que o processo de tradução estiver completo.
+A seguir, encontra-se um fluxograma do processo de compilação
+
+
+
+H2) Interpretação Pura
+
+	a interpretação pura reside no oposto a compilação com. Essa abordagem, os programas são Interpretados por outro (programa) chamado interpretador, sem tradução. o Interpretador atua como uma simulação de software de uma maquina cujo ciclo de obtenção- exdcução trata de sentençãs de programa de alto nivel em vez de intruções de maquina. a interpretação pura tem a vantagem de permitir uma facil umplementalçai de muitas operações de depuração em codigo fonte. pois todas as mensagens de erro em tempo de execução podem referenciar unidades de codigo fonte.
+
+
+
+H3) Sistemas Hibridos
+
+	Alguns sistemas de implementação de linguagens são um meio termo entre os compiladores e os interpretadores puros. eles traduzem os programas em linguagem de alto nivel para uma linguagem interrmediária projetada para facilitar a interpretação.
+	As primeiras implementações em Java eram todas hibridas. seu Formato intermediário, chamado de bytecode, fornece portabilidade para qualquer máquina que tenha um interpretador de bytecodes e um sistema de execução associados. a este conjunto denomina-se máquina virtual java(JVM)
+
+
+
+
+PROGRAMAÇÃO ORIENTADA A OBJETOS
+
+	O conceito nasceu no simula 67, mas não foi muito desenvolvido até a evolução do smalltalk em 1980
+	Uma linguagem orientada a objetos deve fornecer suporte para três recursos chave na linguagem: Tipos de dados abstratos, Herança e Vinculação dinâmica de chamadas a métodos.
+
+Tipos de dados abstratos
+	
+	Uma abstração é uma visão ou representação de uma entidade que inclui apenas os atributos mais significativos 
+	Sintaticamente, um tipo de dado abstrato é um Invólucro que inclui apenas a representação de dados de um tipo de dados específicoo e os subprogramas que fornecem as operações para esse tipo. Um exemplar de um tipo de dados abstrato é chamado Objeto. A programação orientada a objetos é uma melhoria do uso de abstração de dados em desenvolvimento de software, e abstração de dados é um de seus componentes mais importantes.
+
+
+
+
+aula 29/05/2015
+
+A) Herança
+
+	Há muito tempo existe uma pressão sobre os desenvolvedores de software para aumentar a sua produtividade. Essa pressão tem sido intensificada pela contínua redução de custo do hardware de computadores. A partir dos anos 80, para aumento da produtividade adotou-se o reúso de software.
+	O problema com o reúso de tipos abstratos pe que praticamente todos os casos, recursos e capacidades do tipo existente, não são exatamente os necessarios para o novo uso.
+	Um segundo problema com a programação com tipos abstratos eé que as definições de tipos são independentes e no mesmo nível. Torna-se complexo o problema de hierarquia.
+	A herança oferece um solução tanto para o problema de modificação oriundo do reúso de tipos abstratos de dados quanto para o problema de organização de programas.
+	Uma classe que é definida por meio de herança de outra classe é chamada de classe derivada ou subclasse. Uma classe da qual a nova classe é derivada é sua classe pai ou superclasse.
+	Existem diversas maneiras pelas quais uma classe derivada pode diferenciar de sua classe pai
+a classe pai pode definir alguns de seus membros como tendo acesso privado, fazendo com que esses métodos não sejam visiveis na subclasse.
+a subclasse pode adicionar membros àqueles herdados da classe pai.
+a subclasse  pode modificar o comportamento de um ou mais métodos herdados.
+	Se uma nova classe é uma subclasse de uma única classe pai, o processo de derivaçãoo é chamado herança simples. Se a classe tem mais d3 uma classe pai, o processo é chamado de herança multipla.
+	Uma desvantagem da herança como forma de aumentar a possibilidade de reúso é que ela cria dependência entra as classes em uma hierarquia.
+
+B) Vinculação Dinâmica
+
+	A terceira característica (além dos tipos de dados abstratos e da herança) das linguagens de programação orientadas a objetos é um tipo de polimorfismo fornecido pela vinculação dinâmica de mensagens às definições de métodos. Considere a seguinte situação: Uma classe base de A, que define um método que realiza uma operação em objetos da classe base. Uma segunda classe, B, é definida como subclasse de A. Objetos dessa nova classe precisam de uma operação parecida com a fornecida por A, mas com algumas diferenças, visto que eles são diferentes. Então a subclasse sobescreve o método herdado. Se um cliente de A e B tem uma referencia ou um ponteiro para objetos da classe A, essa referencia ou ponteiro tambem pode apontar para objetos da classe B, tornando-a uma referencia ou um ponteiro polimórfico. Se o método, definido em ambas as classes, é chamado pela referência ou pelo ponteiro polimórfico, o sistema de tempo de execução deve determinar, durante a execução, qual método deve ser chamado, o de A ou o de B, determinando qual o tipo do objeto atualmente referenciado pelo ponteiro o pela referência.
+
+C) Questões de projeto
+	no projeto de uma linguagem, diversas questões devem ser consideradas, especialmente para suportar herança e vinculação dinâmica:
+
+Objetos: Um projetista deve estar comprometido com o modelo de objetos que absorva todos os conceitos de tipagem. A vantagem de visualizar tudo como objetos é a elegancia e a uniformidade da linguagem. A desvantagem é a frequencia de passagem de mensagem que ocorre, provocando atrasos no sistema.
+Classes como Subtipos: em um nível menos abstrato, um relacionamento garante que uma variável de classe derivada possa aparecer em qualquer lugar que uma variavel da classe pai fosse esperada, sem causar erros de tipo
+Verificação de Tipos: o polimorfismo em O.O. é definido como o uso de ponteiros ou referencias polimórficas. A variável polimórfica pode referenciar objetos da classe base e das classes descendentes, mas nem sempree pode ser estática, portanto, há problemas da verifficação de tipos dessa vinculação. Duas formas de verificação:
+Os tipos de parâmetros da mensagem deve ser verificados em relação aos parâmetros formais do método.
+o tipo de retorno do método deve ser verificado em relação ao tipo esperado da mensagem.
+Classes Aninhadas: Uma das motivações para as classes aninhadas é o ocultamento de informação. se uma nova classe é necessaria apenas para uma classe, não existe razão para defini-la de forma que seja vista por outras.
+Inicialização de Objetos: objetos são analizados para valores a serem criados:
+inicializar manualmente ou por mecanismos implícitos
+Objeto de subclasse criado inicializa-se implicita ou explicitamente.
