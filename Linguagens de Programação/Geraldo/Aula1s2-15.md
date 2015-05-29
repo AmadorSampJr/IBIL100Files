@@ -426,3 +426,49 @@ Esses fato é preponderante para o aumento da popularidade das linguagens orient
 
 Todos esses passos evolutivos em metodologias de desenvolvimentos de software levaram a novas construções
 de linguagens para suportá-las.
+
+--------------------aula 22/05/2015
+F) Categoria de Linguagens
+	
+	as linguagens de programação são divididas em quatro categorias: Imperativas, funcionais, logicas e orientadas a objetos. as linguagens mais populares que suportam a orientação a objetos crescem a partir das linguagens imperativas
+
+G) Trade-off no projeto de linguagens 
+
+	dois criterios conflitantes são confiabilidade e o custo de execução. por exemplo, a linguagem java exige que todas as referencias aos elementos de um vetor sejam verificadas para garantir que os índices estejam em suas faixas legais. esse passo adiciona muito ao custo de execução de um programa java que contenham um grande número de referencias a elementos de vetores. E, por exemplo, não requer a verificação da faixa de índices, dessa forma, os programas em C executam mais rapido do que programas semanticamente equivalentes em java, apesar destes serem mais confiáveis. os projetistas de java trocaram eficiencia de execução  por confiabilidade.
+
+H) Implementação
+
+	um sistema de implementação de linguagem não pode ser o unico aplicativo de software em um computador. Tambem é necessaria uma grande coleção de programas, chamada de sistema operacional, a qual fornece primitivas de mais alto nivel do que aquelas fornecidas pela linguagem de máquina.
+
+H1) Compilação
+
+As linguagens de programação podem ser implementadas por um de tres métodos gerais. Em um extremo, os programas Podem ser traduzidos para linguagens de máquina. A qual pode ser executada diretamente no computador. Esse método é chamado de implementação baseada em compilação com a vantagem de ter uma execução de programas mas muito mais rápida, uma vez que o processo de tradução estiver completo.
+A seguir, encontra-se um fluxograma do processo de compilação
+
+
+
+H2) Interpretação Pura
+
+	a interpretação pura reside no oposto a compilação com. Essa abordagem, os programas são Interpretados por outro (programa) chamado interpretador, sem tradução. o Interpretador atua como uma simulação de software de uma maquina cujo ciclo de obtenção- exdcução trata de sentençãs de programa de alto nivel em vez de intruções de maquina. a interpretação pura tem a vantagem de permitir uma facil umplementalçai de muitas operações de depuração em codigo fonte. pois todas as mensagens de erro em tempo de execução podem referenciar unidades de codigo fonte.
+
+
+
+H3) Sistemas Hibridos
+
+	Alguns sistemas de implementação de linguagens são um meio termo entre os compiladores e os interpretadores puros. eles traduzem os programas em linguagem de alto nivel para uma linguagem interrmediária projetada para facilitar a interpretação.
+	As primeiras implementações em Java eram todas hibridas. seu Formato intermediário, chamado de bytecode, fornece portabilidade para qualquer máquina que tenha um interpretador de bytecodes e um sistema de execução associados. a este conjunto denomina-se máquina virtual java(JVM)
+
+
+
+
+PROGRAMAÇÃO ORIENTADA A OBJETOS
+
+	O conceito nasceu no simula 67, mas não foi muito desenvolvido até a evolução do smalltalk em 1980
+	Uma linguagem orientada a objetos deve fornecer suporte para três recursos chave na linguagem: Tipos de dados abstratos, Herança e Vinculação dinâmica de chamadas a métodos.
+
+Tipos de dados abstratos
+	
+	Uma abstração é uma visão ou representação de uma entidade que inclui apenas os atributos mais significativos 
+	Sintaticamente, um tipo de dado abstrato é um Invólucro que inclui apenas a representação de dados de um tipo de dados específicoo e os subprogramas que fornecem as operações para esse tipo. Um exemplar de um tipo de dados abstrato é chamado Objeto. A programação orientada a objetos é uma melhoria do uso de abstração de dados em desenvolvimento de software, e abstração de dados é um de seus componentes mais importantes.
+
+----- 29/05/2015
